@@ -1,0 +1,3 @@
+importFrom("graphics", "arrows", "axis", "legend", "par", "plot",
+             "points")
+importFrom("stats", "optim", "rexp", "rnorm", "sd")
