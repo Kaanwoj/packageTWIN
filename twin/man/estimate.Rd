@@ -1,14 +1,11 @@
 \name{estimate}
 \alias{estimate}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Estimate parameter values for the TWIN model.
+    Least squares estimation of the TWIN model
 }
 \description{
-Calculates observed mean and standard deviation for given data. Calls
-\code{optim} for parameter optimization with start values from a call to
-\code{draw_start} and hard coded parameter bounds, \code{objective.function} as
-function to be optimized and L-BFGS-B method.
+    Fits the Time-Window of Integration (TWIN) model for data of the Focused
+    Attention or the Redundant Target Paradigm (FAP, RTP).
 }
 \usage{
 estimate(dat, paradigm)
@@ -22,29 +19,38 @@ estimate(dat, paradigm)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+    \code{estimate} calculates observed mean and standard deviation for given
+    data. It calls \code{optim} for parameter optimization with start values
+    from a call to \code{\link{draw_start}} and hard coded parameter bounds,
+    \code{\link{objective.function}} as function to be optimized and L-BFGS-B
+    method.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+    A \code{list} with components:
+    \item{est}{Return value of \code{\link{optim}}, that is a list containing
+        i.\ a. the best set of parameters found and a code for convergence
+        (\code{0} indicates successful completion).}
+    \item{param.start}{Start values drawn by \code{\link{draw_start}} and used
+        by \code{\link{optim}}.}
 }
 \references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+    Colonius, H., & Diederich, A. (2004). Multisensory interaction in saccadic
+    reaction time: a time-window-of-integration model. \emph{Journal of
+        cognitive neuroscience, 16}, \bold{6}, 1000--1009.
+    \doi{10.1162/0898929041502733}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+    Diederich, A., & Colonius, H. (2015). The time window of multisensory
+    integration: Relating reaction times and judgments of temporal order.
+    \emph{Psychological review, 122}, \bold{2}, 232.
+    \doi{10.1037/a0038696}
 
+    Kandil, F. I., Diederich, A., & Colonius, H. (2014). Parameter recovery for
+    the time-window-of-integration (twin) model of multisensory integration in
+    focused attention. \emph{Journal of vision, 14}, \bold{11}, 14-14.
+    \doi{10.1167/14.11.14}
+}
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+    \code{\link{draw_start}}, \code{\link{optim}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -53,7 +59,3 @@ estimate(dat, paradigm)
 
 ## The function is currently defined as
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
