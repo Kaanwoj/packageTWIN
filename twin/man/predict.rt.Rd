@@ -1,50 +1,58 @@
 \name{predict.rt}
 \alias{predict.rt.fap}
 \alias{predict.rt.rtp}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
     Calculate predicted reaction times under the TWIN model for given parameter
     values.
 }
 \description{
-bla%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+    Under the TWIN model, the total reaction time in the crossmodal condition
+    \eqn{RT_{VA}} is the sum of the processing times in stage 1 and stage 2.
+    Let \eqn{M1} and \eqn{M2} denote two random variables that refer to the
+    first and second stage processing times, so that the overall reaction time
+    becomes \eqn{RT_{VA} = M_1 + M_2}.
+    \deqn{E[RT_{VA}] = E[M_1] + E[M_2|\neg I] - P(I) \cdot \Delta$$}, with
+
+        \code{I}{is the event that multisensory integration occurs, with
+          probability \eqn{P(I)}}
+        \code{\eqn{E[M_2|\neg I]}}{is the expected stage 2 processing time
+                conditioned on multisensory integration not occuring}
+        \code{\eqn{Delta}}{is the size of the crossmodal interaction
+                effect}
+
 }
 \usage{
 predict.rt.fap(par, column.names)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{par}{
-%%     ~~Describe \code{par} here~~
+    Vector of TWIN parameter values.
 }
   \item{column.names}{
-%%     ~~Describe \code{column.names} here~~
+    Column names of \code{data.frame} of reaction time data. Names are SOA, see
+    details.
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+    Numeric vector of reaction times with length of \code{column.names}
 }
 \references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+    Colonius, H., & Diederich, A. (2004). Multisensory interaction in saccadic
+    reaction time: a time-window-of-integration model. \emph{Journal of
+        cognitive neuroscience, 16}, \bold{6}, 1000--1009.
+    \doi{10.1162/0898929041502733}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+    Diederich, A., & Colonius, H. (2015). The time window of multisensory
+    integration: Relating reaction times and judgments of temporal order.
+    \emph{Psychological review, 122}, \bold{2}, 232.
+    \doi{10.1037/a0038696}
+}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+    \code{\link{estimate}}, \code{\link{plotPredObs}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -53,7 +61,3 @@ predict.rt.fap(par, column.names)
 
 ## The function is currently defined as
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
