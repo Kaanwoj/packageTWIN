@@ -1,5 +1,3 @@
-### Estimation Tab Plots ###
-
 # Plot predicted and observed RTs for FAP
 plotPredObs.fap <- function(data, est) {
 
