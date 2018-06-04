@@ -7,6 +7,7 @@
     Draws a value from a distribution. Which distribution is used, depends on
     the parameter (\code{par}) of the TWIN model, see details. If a value is outside the
     parameter bounds, a new value is drawn.
+    \code{draw_start} is called by \code{\link{estimate}}.
 }
 \usage{
 draw_start(par, bounds)

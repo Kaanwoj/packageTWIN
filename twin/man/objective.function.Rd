@@ -12,6 +12,8 @@
         reaction times, respectively, and SE is the standard error.
     Predicted reaction times are obtained by a call to
    \code{\link{predict.rt}}.
+
+   \code{objective.function} is called by \code{\link{estimate}}.
 }
 \usage{
     objective.function(par, obs.m, obs.se, column.names, paradigm)

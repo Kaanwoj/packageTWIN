@@ -2,7 +2,7 @@
 \alias{predict.rt.fap}
 \alias{predict.rt.rtp}
 \title{
-    Calculate predicted reaction times under the TWIN model for given parameter
+    Calculate mean predicted reaction times under the TWIN model for given parameter
     values.
 }
 \description{
@@ -55,9 +55,16 @@ predict.rt.fap(par, column.names)
     \code{\link{estimate}}, \code{\link{plotPredObs}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# Focused Attention Paradigm
+data <- simulate.fap(soa = c(-200, -100, -50, 0, 50, 100, 200), , N = 500)
 
-## The function is currently defined as
+pred <- predict.rt.fap(c(proc.A=150, proc.V=100, mu=200, omega=200, delta=50),
+                       colnames(data))
+
+# Redundant Target Paradigm
+data <- simulate.rtp(soa = c(0, 50, 100, 200), proc.A = 150, proc.V = 100, mu =
+                     200, sigma = 25, omega = 200, delta = 50, N = 500)
+
+pred <- predict.rt.rtp(c(proc.A=150, proc.V=100, mu=200, omega=200, delta=50),
+                       colnames(data))
 }

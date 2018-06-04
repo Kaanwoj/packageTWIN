@@ -37,9 +37,22 @@ plotPredObs.fap(data, est)
     \code{\link{estimate}}, \code{\link{predict.rt}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+  \dontrun{
+    # Focused Attention Paradigm
+    data <- simulate.fap(soa=c(-200, -100, -50, 0, 50, 100, 200), proc.A=150,
+                         proc.V=100, mu=200, sigma=25, omega=200, delta=50,
+                         N=500)
 
-## The function is currently defined as
+    est <- estimate(data, paradigm = "fap")
+
+    plotPredObs.fap(data, est)
+
+    # Redundant Target Paradigm
+    data <- simulate.rtp(soa=c(0, 50, 100, 200), proc.A=150, proc.V=100,
+                         mu=200, sigma=25, omega=200, delta=50, N=500)
+
+    est <- estimate(data, paradigm = "rtp")
+
+    plotPredObs.rtp(data, est)
+  }
 }
