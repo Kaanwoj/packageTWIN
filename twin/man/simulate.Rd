@@ -7,71 +7,67 @@
     values.
 }
 \description{
-bla%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
 simulate.fap(soa, proc.A, proc.V, mu, sigma, omega, delta, N)
+simulate.rtp(soa, proc.A, proc.V, mu, sigma, omega, delta, N)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{soa}{
-%%     ~~Describe \code{soa} here~~
+      Numeric vector of stimulus onset asynchrony (SOA) times.
 }
   \item{proc.A}{
-%%     ~~Describe \code{proc.A} here~~
+      Numeric value of mean processing time of auditory stimulus on stage 1.
 }
   \item{proc.V}{
-%%     ~~Describe \code{proc.V} here~~
+      Numeric value of mean processing time of visual stimulus on stage 1.
 }
   \item{mu}{
-%%     ~~Describe \code{mu} here~~
+      Numeric value of mean processing time on stage 1.
 }
   \item{sigma}{
-%%     ~~Describe \code{sigma} here~~
+      Numeric value of standard deviation of processing time on stage 1.
 }
   \item{omega}{
-%%     ~~Describe \code{omega} here~~
+      Numeric value of Time Window of Integration width.
 }
   \item{delta}{
-%%     ~~Describe \code{delta} here~~
+      Numeric value of size of cross-modal interaction effect.
 }
   \item{N}{
-%%     ~~Describe \code{N} here~~
+      Number of observations for each SOA.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+    See model here.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+    Matrix of \code{N} rows and as many columns as different SOAs
+    (\code{length(soa)}) containing sampled processing times.
+    For simulate.fap, column names are in the form of, e.g. "SOA.neg200",
+    meaning the auditory stimulus precedes the visual by 200 ms (-200).
+    For simulate.rtp, column names are in the form of, e.g. "audSOA.50",
+    meaning the auditory stimulus precedes the visual by 50 ms.
 }
 \references{
-%% ~put references to the literature/web site here ~
+    See \code{\link{twin-package}}.
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+    \code{\link{estimate}}, \code{\link{predict.rt}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+data <- simulate.fap(soa = c(-200, -100, -50, 0, 50, 100, 200),
+                     proc.A = 150, proc.V = 100,
+                     mu = 200, sigma = 25,
+                     omega = 200, delta = 50,
+                     N = 500)
 
-## The function is currently defined as
+# Redundant Target Paradigm
+data <- simulate.rtp(soa = c(0, 50, 100, 200),
+                     proc.A = 150, proc.V = 100,
+                     mu = 200, sigma = 25,
+                     omega = 200, delta = 50,
+                     N = 500)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
