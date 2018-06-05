@@ -10,7 +10,7 @@ Authors@R: c(person(given = "Katharina", family = "Naumann",
                     role = "ctb"))
 Depends: R (>= 3.3.3)
 Imports: graphics, stats
-Description: Simulating data and estimating parameters of the TWIN model.
+Description: Simulating data and estimating parameters of the TWIN model (Colonius & Diederich, 2004).
 License: GPL (>= 2)
 Author: Katharina Naumann [aut, cre],
   Melanie Spindler [aut]
