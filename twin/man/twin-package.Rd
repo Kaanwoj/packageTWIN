@@ -8,16 +8,17 @@
 \packageDescription{twin}
 }
 \details{
-    Estimating parameters of the Time-Window of Integration (TWIN)
-    model and simulating data for parameter sets under the model. Multisensory
-    integration of sensory information into a perceptual unit (event) occurs only
-    if the peripheral sensory processes all terminate within a given temporal
-    interval, the Time-Window of Integration (TWIN). Assumed are two stages. In the
-    first stage, there is a (stochastically independent) race among the peripheral
-    processes. The second stage comprises all processes following the first stage
-    including preparation and execution of a response. The parameters are the
-    processing times. Other parameters are the length of the TWIN and the amount of
-    integration. Data are reaction times.
+    Estimating parameters of the Time-Window of Integration (TWIN, Colonius &
+    Diederich, 2004; Diederich & Colonius, 2015) model and simulating data for
+    parameter sets under the model (Kandil et al., 2014). Multisensory
+    integration of sensory information into a perceptual unit (event) occurs
+    only if the peripheral sensory processes all terminate within a given
+    temporal interval, the Time-Window of Integration (TWIN). Assumed are two
+    stages. In the first stage, there is a (stochastically independent) race
+    among the peripheral processes. The second stage comprises all processes
+    following the first stage including preparation and execution of a
+    response. The parameters are the processing times. Other parameters are the
+    length of the TWIN and the amount of integration. Data are reaction times.
 }
 \author{
 \packageAuthor{twin}

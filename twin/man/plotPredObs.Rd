@@ -1,18 +1,11 @@
-\name{plotPredObs.fap}
+\name{plotPredObs}
+\alias{plotPredObs}
 \alias{plotPredObs.fap}
 \alias{plotPredObs.rtp}
-\title{
+\title{Plotting function for predicted and observed reaction times}
+\description{
     Plot predicted and observes reaction times for the Focused Attention
     Paradigm or Redundant Target Paradigm
-}
-\description{
-    Wrapper for \code{plot}. Read SOA from \code{data} \code{colnames}, and
-    calculate mean observed reaction times (and standard deviation). Call
-    \code{\link{predict.rt.fap}} or \code{\link{predict.rt.rtp}} for predicted
-    reaction times under TWIN model with parameters \code{est}.
-
-    \code{plotPredObs.fap} creats one plot, \code{plotPredObs.rtp} two plots,
-    one for each modality.
 }
 \usage{
 plotPredObs.fap(data, est)
@@ -30,6 +23,15 @@ plotPredObs.fap(data, est)
         by \code{\link{optim}}.)
 }
 }
+\details{
+    Wrapper for \code{plot}. Read SOA from \code{data} \code{colnames}, and
+    calculate mean observed reaction times (and standard deviation). Call
+    \code{\link{predict.rt.fap}} or \code{\link{predict.rt.rtp}} for predicted
+    reaction times under TWIN model with parameters \code{est}.
+
+    \code{plotPredObs.fap} creats one plot, \code{plotPredObs.rtp} two plots,
+    one for each modality.
+}
 \value{
     A \code{plot}.
 }
@@ -37,22 +39,22 @@ plotPredObs.fap(data, est)
     \code{\link{estimate}}, \code{\link{predict.rt}}
 }
 \examples{
-  \dontrun{
-    # Focused Attention Paradigm
-    data <- simulate.fap(soa=c(-200, -100, -50, 0, 50, 100, 200), proc.A=150,
-                         proc.V=100, mu=200, sigma=25, omega=200, delta=50,
-                         N=500)
-
-    est <- estimate(data, paradigm = "fap")
-
-    plotPredObs.fap(data, est)
-
-    # Redundant Target Paradigm
-    data <- simulate.rtp(soa=c(0, 50, 100, 200), proc.A=150, proc.V=100,
-                         mu=200, sigma=25, omega=200, delta=50, N=500)
-
-    est <- estimate(data, paradigm = "rtp")
-
-    plotPredObs.rtp(data, est)
-  }
+#  \dontrun{
+#    # Focused Attention Paradigm
+#    data <- simulate.fap(soa=c(-200, -100, -50, 0, 50, 100, 200), proc.A=150,
+#                         proc.V=100, mu=200, sigma=25, omega=200, delta=50,
+#                         N=500)
+#
+#    est <- estimate(data, paradigm = "fap")
+#
+#    plotPredObs.fap(data, est)
+#
+#    # Redundant Target Paradigm
+#    data <- simulate.rtp(soa=c(0, 50, 100, 200), proc.A=150, proc.V=100,
+#                         mu=200, sigma=25, omega=200, delta=50, N=500)
+#
+#    est <- estimate(data, paradigm = "rtp")
+#
+#    plotPredObs.rtp(data, est)
+#  }
 }

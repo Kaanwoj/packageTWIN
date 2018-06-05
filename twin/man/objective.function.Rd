@@ -1,19 +1,9 @@
 \name{objective.function}
 \alias{objective.function}
-\title{
-    Least squares function to be optimized
-}
+\title{Least squares function to be optimized}
 \description{
-
-    Calculate the \eqn{\chi^2} statistic
-    \deqn{\chi^2 = \sum_{all conditions}
-        \left[\frac{{mean}[RT_{obs}]-[RT_{pred}]}{SE[RT_{obs}]}\right]^2}
-        where \eqn{RT_{obs}} and \eqn{RT_{pred}} are the observed and predicted
-        reaction times, respectively, and SE is the standard error.
-    Predicted reaction times are obtained by a call to
-   \code{\link{predict.rt}}.
-
-   \code{objective.function} is called by \code{\link{estimate}}.
+    Calculate the \eqn{\chi^2}-statistic for the observed and predicted
+    reaction times (see details).
 }
 \usage{
     objective.function(par, obs.m, obs.se, column.names, paradigm)
@@ -38,6 +28,16 @@
 }
 }
 \details{
+    Calculate the \eqn{\chi^2}-statistic
+    \deqn{\chi^2 = \sum_{all conditions}
+       \left[\frac{{mean}[RT_{obs}]-[RT_{pred}]}{SE[RT_{obs}]}\right]^2}
+    where \eqn{RT_{obs}} and \eqn{RT_{pred}} are the observed and predicted
+        reaction times, respectively, and SE is the standard error.
+    Predicted reaction times are obtained by a call to
+   \code{\link{predict.rt}}.
+
+   \code{objective.function} is called by \code{\link{estimate}}.
+
     \code{column.names} is a vector of strings in the form of \code{"SOA.100"} for
     Focused Attention Paradigm (\code{paradigm = "fap"}), and \code{"audSOA.0"} for
     Redundant Target Paradigm (\code{paradigm = "rtp"}).

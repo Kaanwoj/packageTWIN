@@ -1,13 +1,8 @@
 \name{draw_start}
 \alias{draw_start}
-\title{
-    Draw a start value for a parameter for the optimizer.
-}
+\title{Start values for the optimizer}
 \description{
-    Draws a value from a distribution. Which distribution is used, depends on
-    the parameter (\code{par}) of the TWIN model, see details. If a value is outside the
-    parameter bounds, a new value is drawn.
-    \code{draw_start} is called by \code{\link{estimate}}.
+    Draw a start value for a parameter for the optimizer.
 }
 \usage{
 draw_start(par, bounds)
@@ -24,6 +19,10 @@ draw_start(par, bounds)
 }
 }
 \details{
+    Draws a value from a distribution. Which distribution is used, depends on
+    the parameter (\code{par}) of the TWIN model, see details. If a value is
+    outside the parameter bounds, a new value is drawn.
+    \code{draw_start} is called by \code{\link{estimate}}.
     For \code{proc.A} and \code{proc.V} values are sampled from an exponential
     distribution, and for \code{mu}, \code{omega}, and \code{delta} from a
     normal distribution.
